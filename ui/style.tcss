@@ -1,21 +1,15 @@
-Credits Label {
-	margin: 1;
-}
-
-Menu Button {
+Screen > * {
 	margin: 1;
 }
 
 Screen {
-    align: center middle;
+	align: center middle;
 }
 
-.container {
-    height: auto;
-    width: auto;
+Select {
+	max-width: 30;
 }
 
-Switch {
-    height: auto;
-    width: auto;
+PlanetWidget {
+	max-height: 10;
 }

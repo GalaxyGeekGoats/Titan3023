@@ -9,15 +9,10 @@ from ui.database import DatabaseScreen
 class Menu(Screen):
     def compose(self):
         yield Header()
-        yield Container(
-                Vertical( 
-                    Button("Load", id="load", variant="primary"),
-                    Button("New Game", id="new_game", variant="success"),
-                    Button("Database", id="database", variant="warning"),
-                    Button("Credits", id="credits", variant="default"),
-                    classes="container"
-                )
-        )
+        yield Button("Load", id="load", variant="primary")
+        yield Button("New Game", id="new_game", variant="success")
+        yield Button("Database", id="database", variant="warning")
+        yield Button("Credits", id="credits", variant="default")
         yield Footer()
 
     def on_button_pressed(self, event):

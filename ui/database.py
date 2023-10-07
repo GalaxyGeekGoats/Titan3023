@@ -14,10 +14,10 @@ class PlanetWidget(Widget):
 
 class DatabaseScreen(Screen):
     def compose(self):
+        yield Button("Back", id="back_btn", variant="default")
         yield Select(existing_planet_reader.planet_names, id="chosen_planet")
         yield Button("Confirm", id="confirm_btn", variant="success")
         yield PlanetWidget()
-        yield Button("Back", id="back_btn", variant="default")
 
     def on_button_pressed(self, event):
         btn_id = event.button.id
