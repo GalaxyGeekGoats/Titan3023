@@ -1,6 +1,5 @@
-from textual.widgets import Header, Footer, Select, Static, Button, Label, Checkbox
-from textual.containers import ScrollableContainer
-from textual.screen import Screen, ModalScreen
+from textual.widgets import Select, Button, Checkbox
+from textual.screen import Screen
 
 LANGUAGES = ["english", "polski", "deutsch"]
 LANGUAGES = list(map(lambda x: (x, x), LANGUAGES))

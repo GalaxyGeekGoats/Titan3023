@@ -1,5 +1,6 @@
-from textual.widgets import Header, Footer, Select, Static, Button, Label, Checkbox
+from textual.widgets import Static, Button
 from ui.credits import Credits
+
 
 class Menu(Static):
     def compose(self):

@@ -1,5 +1,6 @@
-from textual.widgets import Header, Footer, Select, Static, Button, Label, Checkbox
-from textual.screen import Screen, ModalScreen
+from textual.widgets import Header, Footer, Button, Label
+from textual.screen import Screen
+
 
 class Credits(Screen):
     def compose(self):

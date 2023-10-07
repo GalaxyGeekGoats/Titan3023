@@ -1,9 +1,9 @@
-from textual.app import App, ComposeResult
-from textual.widgets import Header, Footer, Select, Static, Button, Label, Checkbox
+from textual.app import App
+from textual.widgets import Header, Footer
 from textual.containers import ScrollableContainer
-from textual.screen import Screen, ModalScreen
 from ui.settings import SettingsScreen
 from ui.menu import Menu
+
 
 class Titan3023(App):
     BINDINGS = [("s", "push_screen('settings')", "Settings")]
@@ -14,4 +14,3 @@ class Titan3023(App):
         yield Header()
         yield ScrollableContainer(Menu())
         yield Footer()
-
