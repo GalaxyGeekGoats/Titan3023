@@ -1,7 +1,9 @@
 from textual.widgets import Select, Button, Checkbox
 from textual.screen import Screen
 
-LANGUAGES = ["english", "polski", "deutsch"]
+import ui.app
+
+LANGUAGES = ["english", "polski", "deutsch", "Español", "日本語(Nihongo)", "Latinus"]
 LANGUAGES = list(map(lambda x: (x, x), LANGUAGES))
 
 
@@ -18,8 +20,6 @@ class SettingsScreen(Screen):
 
     def on_button_pressed(self, event):
         btn_id = event.button.id
-        if btn_id == "lang_change":
-            pass
-            # if self.query_one("#select_lang").value  == "polski"
-        elif btn_id == "save_btn":
+        if btn_id == "save_btn":
+            ui.app.lang = self.query_one("#select_lang").value
             self.app.pop_screen()

@@ -6,6 +6,7 @@ from read_existing_planet import existing_planet_reader
 
 chosenPlanet = -1
 
+
 class ExistingPlanet(Screen):
     def compose(self):
         yield Header()
@@ -16,6 +17,7 @@ class ExistingPlanet(Screen):
         yield Footer()
 
     def on_button_pressed(self, event):
+        global chosenPlanet
         btn_id = event.button.id
         if btn_id == "choose":
             chosenPlanet = self.query_one("#select_planet").value
