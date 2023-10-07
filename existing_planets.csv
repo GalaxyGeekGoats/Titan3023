@@ -1,0 +1,18 @@
+planet_name;min_temp;max_temp;avg_temp;light_intensity;Uranium;Iron;Silicon;Colour
+Mercury;100;700;452;14.59;No;Yes;Yes;Brown
+Venus;735;735;735;64.16;No;Yes;Yes;Yellow
+Earth;184;331;288;1;Yes;Yes;Yes;Blue
+Mars;133;293;210;0.43;No;Yes;Yes;Red
+Moon;100;390;250;1;No;Yes;Yes;Grey
+Io;90;130;110;0.24;No;Yes;Yes;Orange
+Europa;50;125;102;0.13;No;Yes;Yes;White
+Enceladus;32;89;75;0.005;No;Yes;Yes;White
+Titan;70;94;70;0.01;No;Yes;Yes;Orange
+Kepler-452b;252;280;265;1.2;Yes;Yes;Yes;Brown
+Proximia Centauri b;220;240;234;0.7;Yes;Yes;Yes;Orange
+Kepler-22b;275;283;279;1.04;No;Yes;Yes;Green
+Kepler-186f;160;200;188;0.005;Yes;Yes;Yes;Red
+Coconuts-2 b;425;443;432;8;No;Yes;Yes;Aquilium
+CD Cet b;446;482;464;8;Yes;No;Yes;Sanguine
+Ganymede ;193;283;273;0.04;No;Yes;Yes;Brown
+Triton;235;214;235;0.03;No;Yes;Yes;Pink
