@@ -23,5 +23,3 @@ class SettingsScreen(Screen):
             # if self.query_one("#select_lang").value  == "polski"
         elif btn_id == "save_btn":
             self.app.pop_screen()
-
-

@@ -4,8 +4,8 @@ from ui.menu import Menu
 
 
 class Titan3023(App):
-    BINDINGS = [("s", "switch_screen('settings')", "Settings")]
-    SCREENS = {"menu" : Menu ,"settings": SettingsScreen}
+    BINDINGS = [("s", "push_screen('settings')", "Settings")]
+    SCREENS = {"menu": Menu, "settings": SettingsScreen}
     CSS_PATH = "./style.tcss"
 
     def on_mount(self):

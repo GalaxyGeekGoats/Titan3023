@@ -1,9 +1,10 @@
 from textual.widgets import Button, Header, Footer
 from ui.credits import Credits
-from ui.NewGame import NewGame
+from ui.new_game import NewGame
 from textual.screen import Screen
 from textual.containers import Container, Vertical
 from ui.database import DatabaseScreen
+
 
 class Menu(Screen):
     def compose(self):
@@ -18,6 +19,7 @@ class Menu(Screen):
                 )
         )
         yield Footer()
+
     def on_button_pressed(self, event):
         btn_id = event.button.id
         if btn_id == "credits":

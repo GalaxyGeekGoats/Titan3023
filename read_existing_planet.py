@@ -1,9 +1,10 @@
 import pandas as pd
-import planetClass
+from planet_class import Planet
 
-def readPlanet(row):
-    data= pd.read_csv("existing_planets.csv", delimiter=';')
-    plan = planetClass.planet(
+
+def read_planet(row):
+    data = pd.read_csv("existing_planets.csv", delimiter=';')
+    plan = Planet(
         data.planet_name[row],
         data.min_temp[row],
         data.max_temp[row],

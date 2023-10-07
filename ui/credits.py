@@ -15,5 +15,3 @@ class Credits(Screen):
     def on_button_pressed(self, event):
         if event.button.id == "back":
             self.dismiss()
-
-
