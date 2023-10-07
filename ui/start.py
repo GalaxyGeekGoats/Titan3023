@@ -1,30 +1,37 @@
 from textual.widgets import Header, Footer, Label, Input, Button, DataTable
 from textual.screen import Screen
-from textual.validation import Function, Number, ValidationResult, Validator
-from textual.reactive import reactive
+from textual.validation import Number
 from ui.label_change import LabelChange
 from building_reader import building_reader
 from rich.text import Text
+from ui.gameplay import Gameplay
 
 ROWS = [
-    ("NAME", "COST", "INPUT", "OUTPUT", ),
-    (building_reader.read_building(0).name, str(building_reader.read_building(0).build_cost_value) + " x " + building_reader.read_building(0).build_cost, str(building_reader.read_building(0).input_value) + " x " + building_reader.read_building(0).building_input, str(building_reader.read_building(0).output_value) + " x " + building_reader.read_building(0).building_output),
+    ("NAME", "COST", "INPUT", "OUTPUT",),
+    (building_reader.read_building(0).name,
+     str(building_reader.read_building(0).build_cost_value) + " x " + building_reader.read_building(0).build_cost,
+     str(building_reader.read_building(0).input_value) + " x " + building_reader.read_building(0).building_input,
+     str(building_reader.read_building(0).output_value) + " x " + building_reader.read_building(0).building_output),
     (building_reader.read_building(1).name,
      str(building_reader.read_building(1).build_cost_value) + " x " + str(building_reader.read_building(1).build_cost),
      str(building_reader.read_building(1).input_value) + " x " + str(building_reader.read_building(1).building_input),
-     str(building_reader.read_building(1).output_value) + " x " + str(building_reader.read_building(1).building_output)),
+     str(building_reader.read_building(1).output_value) + " x " + str(
+         building_reader.read_building(1).building_output)),
     (building_reader.read_building(2).name,
      str(building_reader.read_building(2).build_cost_value) + " x " + str(building_reader.read_building(2).build_cost),
      str(building_reader.read_building(2).input_value) + " x " + str(building_reader.read_building(2).building_input),
-     str(building_reader.read_building(2).output_value) + " x " + str(building_reader.read_building(2).building_output)),
+     str(building_reader.read_building(2).output_value) + " x " + str(
+         building_reader.read_building(2).building_output)),
     (building_reader.read_building(3).name,
      str(building_reader.read_building(3).build_cost_value) + " x " + str(building_reader.read_building(3).build_cost),
      str(building_reader.read_building(3).input_value) + " x " + str(building_reader.read_building(3).building_input),
-     str(building_reader.read_building(3).output_value) + " x " + str(building_reader.read_building(3).building_output)),
+     str(building_reader.read_building(3).output_value) + " x " + str(
+         building_reader.read_building(3).building_output)),
     (building_reader.read_building(4).name,
      str(building_reader.read_building(4).build_cost_value) + " x " + str(building_reader.read_building(4).build_cost),
      str(building_reader.read_building(4).input_value) + " x " + str(building_reader.read_building(4).building_input),
-     str(building_reader.read_building(4).output_value) + " x " + str(building_reader.read_building(4).building_output)),
+     str(building_reader.read_building(4).output_value) + " x " + str(
+         building_reader.read_building(4).building_output)),
     (building_reader.read_building(5).name,
      str(building_reader.read_building(5).build_cost_value) + " x " + str(building_reader.read_building(5).build_cost),
      str(building_reader.read_building(5).input_value) + " x " + str(building_reader.read_building(5).building_input),
@@ -32,11 +39,15 @@ ROWS = [
 
 ]
 
+
 class Start(Screen):
     def compose(self):
+
         yield Header(id="Header")
         yield DataTable()
-        yield Label("The rocket's payload is 21 units. Choose wisely so that you don't miss anything on your trip. You will be able to extract raw materials on the planet, but at the beginning you must choose how much of what you take.", id="desc")
+        yield Label(
+            "The rocket's payload is 21 units. Choose wisely so that you don't miss anything on your trip. You will be able to extract raw materials on the planet, but at the beginning you must choose how much of what you take.",
+            id="desc")
         yield Label("Silicon:", id="silicon_text")
         yield Input(
             id="silicon_amount",
@@ -67,7 +78,6 @@ class Start(Screen):
         yield Footer()
 
     def on_button_pressed(self, event):
-
         btn_id = event.button.id
         if btn_id == "submit_btn":
             try:
@@ -75,14 +85,15 @@ class Start(Screen):
                 iron = int(self.query_one("#iron_amount").value)
                 uranium = int(self.query_one("#uranium_amount").value)
                 if silicon + iron + uranium > 21 or silicon + iron + uranium < 0:
-                    self.query_one("#return").data = "Rocket won't launch. Weight of materials is more than 21 or less than 0"
+                    self.query_one(
+                        "#return").data = "Rocket won't launch. Weight of materials is more than 21 or less than 0"
                 else:
                     self.query_one("#return").data = "Good luck"
 
             except:
                 self.query_one("#return").data = "Give a number!!!"
         elif btn_id == "next":
-            pass
+            self.app.switch_screen(Gameplay())
 
     def on_mount(self) -> None:
         table = self.query_one(DataTable)

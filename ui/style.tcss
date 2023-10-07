@@ -13,3 +13,8 @@ Select {
 PlanetWidget {
 	max-height: 10;
 }
+
+.horizony{
+    width: 0.4fr;
+    border: solid green;
+}

@@ -1,5 +1,6 @@
 from textual.widgets import Header, Footer, Button, Label
 from textual.screen import Screen
+import asyncio
 
 import ui.custom_planet
 from ui.start import Start
@@ -18,6 +19,7 @@ class CustomPlanetDisc(Screen):
         yield Footer()
 
     def on_button_pressed(self, event):
+
         btn_id = event.button.id
         if btn_id == "start":
             self.app.switch_screen(Start())
