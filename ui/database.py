@@ -6,6 +6,7 @@ from ui.label_change import LabelChange
 
 class DatabaseScreen(Screen):
     def compose(self):
+        yield Button("Back", id="back_btn", variant="default")
         yield Select(existing_planet_reader.planet_names, id="chosen_planet")
         yield Button("Confirm", id="confirm_btn", variant="success")
         yield LabelChange()
