@@ -2,19 +2,15 @@ from textual.widgets import Header, Footer, Select, Button, Label
 from textual.screen import Screen
 from ui.exist_planet_disc import ExistPlanetDisc
 import pandas as pd
+from read_existing_planet import existing_planet_reader
 
 chosenPlanet = -1
-
-data = pd.read_csv("existing_planets.csv", delimiter=';')
-PLANETS = data.planet_name
-PLANETS = [(planet, i) for i, planet in enumerate(PLANETS)]
-
 
 class ExistingPlanet(Screen):
     def compose(self):
         yield Header()
         yield Label("Select planet to expedition:")
-        yield Select(PLANETS, id="select_planet")
+        yield Select(existing_planet_reader.planet_names, id="select_planet")
         yield Button("Choose", id="choose", variant="default")
         yield Button("Back", id="back", variant="default")
         yield Footer()

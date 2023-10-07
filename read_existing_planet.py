@@ -1,19 +1,13 @@
 import pandas as pd
 from planet_class import Planet
 
+class ExistingPlanetReader:
+    def __init__(self):
+        self.__data = pd.read_csv("existing_planets.csv", delimiter=';')
+        self.planet_names = [(planet, i) for i, planet in enumerate(self.__data.planet_name)]
 
-def read_planet(row):
-    data = pd.read_csv("existing_planets.csv", delimiter=';')
-    plan = Planet(
-        data.planet_name[row],
-        data.min_temp[row],
-        data.max_temp[row],
-        data.avg_temp[row],
-        data.light_intensity[row],
-        data.Uranium[row],
-        data.Iron[row],
-        data.Silicon[row],
-        data.Colour[row]
-    )
+    def read_planet(self, row):
+        plan = Planet(*self.__data.iloc[row])
+        return plan
 
-    return plan
+existing_planet_reader = ExistingPlanetReader()
