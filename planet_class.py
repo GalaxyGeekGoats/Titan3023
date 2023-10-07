@@ -1,5 +1,4 @@
-import openai
-
+import openai, os
 
 class Planet:
     def __init__(self, name, min_temp, max_temp, avg_temp, light_intensity, uran_bool, iron_bool, silicon_bool, color):
@@ -18,7 +17,7 @@ class Planet:
             f"name: {str(self.name)}\nmin_temp: {str(self.min_temp)}\nmax_temp: {str(self.max_temp)}\navg_temp: {str(self.avg_temp)}\nlight_intensity: {str(self.light_intensity)}\nuranTF: {str(self.uranTF)}\nironTF: {str(self.ironTF)}\nciliconTF: {str(self.siliconTF)}\ncolor: {str(self.color)}")
 
     def desc(self):
-        openai.api_key = "[key]"
+        openai.api_key = os.getenv("OPENAI_KEY")
         response = openai.Completion.create(
             model="gpt-3.5-turbo-instruct",
             prompt="Opisz planete która jest: " + str(self),
