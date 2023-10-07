@@ -8,7 +8,7 @@ from ui.start import Start
 class ExistPlanetDisc(Screen):
     def compose(self):
         yield Header()
-        yield Label(str(existing_planet_reader.read_planet(int(ui.existing_planet.chosenPlanet)).desc()))
+        #yield Label(str(existing_planet_reader.read_planet(int(ui.existing_planet.chosenPlanet)).desc()))
         yield Button("Choose", id="choose", variant="default")
         yield Button("Back", id="back", variant="default")
         yield Footer()

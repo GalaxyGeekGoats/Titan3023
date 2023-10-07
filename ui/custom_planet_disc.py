@@ -10,10 +10,10 @@ class CustomPlanetDisc(Screen):
     def compose(self):
         name = ui.custom_planet.custom_name
         yield Header()
-        if name == "":
-            yield Label(generate())
-        else:
-            yield Label(generate(name))
+        #if name == "":
+        #    yield Label(generate())
+        #else:
+        #    yield Label(generate(name))
         yield Button("Start", id="start", variant="default")
         yield Footer()
 

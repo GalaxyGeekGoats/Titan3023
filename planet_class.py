@@ -1,5 +1,7 @@
 import openai, os
 
+import ui.app
+
 
 class Planet:
     def __init__(self, name, min_temp, max_temp, avg_temp, light_intensity, uran_bool, iron_bool, silicon_bool, color):
@@ -21,7 +23,7 @@ class Planet:
         openai.api_key = os.getenv("OPENAI_KEY")
         response = openai.Completion.create(
             model="gpt-3.5-turbo-instruct",
-            prompt="Opisz planete która jest: " + str(self),
+            prompt="Opisz planete w języku: "+ ui.app.lang +" która jest: " + str(self),
             max_tokens=550,
             temperature=1
         )
