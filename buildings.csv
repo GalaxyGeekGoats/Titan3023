@@ -1,0 +1,7 @@
+building_name;build_cost;Input;Output;Output_value;Input_value;build_cost_value
+Heater;Silicon;Energy ;Heat;1;1000 kWh;1
+Hub;Iron;Energy;None;None;100 kWh;3
+Extractor;Iron;Energy;Minerals available ;1;2400 kWh;2
+Solar Panels;Silicon;None;Energy;1100 kWh * light_intensity;None;1
+Reactor;Iron;Uranium;Energy;9000 kWh;1;3
+Radiator;Silicon;None;Heat;-1;None;1
