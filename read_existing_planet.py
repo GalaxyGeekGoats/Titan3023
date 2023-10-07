@@ -15,4 +15,4 @@ def readPlanet(row):
         data.Colour[row]
     )
 
-    plan.opis()
+    return plan

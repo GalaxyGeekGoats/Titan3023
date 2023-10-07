@@ -1,2 +1,21 @@
-Menu {
+Credits Label {
+	margin: 1;
+}
+
+Menu Button {
+	margin: 1;
+}
+
+Screen {
+    align: center middle;
+}
+
+.container {
+    height: auto;
+    width: auto;
+}
+
+Switch {
+    height: auto;
+    width: auto;
 }
