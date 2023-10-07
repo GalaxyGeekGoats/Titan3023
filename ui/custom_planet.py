@@ -15,6 +15,7 @@ class CustomPlanet(Screen):
         yield Footer()
 
     def on_button_pressed(self, event):
+        global custom_name
         btn_id = event.button.id
         if btn_id == "go":
             custom_name = self.query_one("#input").value

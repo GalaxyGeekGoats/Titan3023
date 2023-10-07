@@ -13,9 +13,9 @@ min_temp = random_number(0, 300)
 max_temp = random_number(200, 800)
 
 
-def generate():
+def generate(name=letters[random_number(0, len(letters) - 1)] + "-" + str(random_number(100, 999))):
     plan = Planet(
-        letters[random_number(0, len(letters) - 1)] + "-" + str(random_number(100, 999)),
+        name,
         min_temp,
         max_temp,
         (min_temp + max_temp) / 2,
