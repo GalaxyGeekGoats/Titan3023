@@ -34,7 +34,7 @@ class Grid:
                         StateSaver.resources[cell.bulding_output.lower()] += cell.output_value
     
     def __str__(self):
-        return "\n".join(["".join(list(map(lambda cell: "_" if not cell else cell.emote, row))) for row in self.content])
+        return "\n".join([" ".join(list(map(lambda cell: "_" if not cell else cell.emote, row))) for row in self.content])
 
     def remove(self, x, y) -> bool:
         if not Grid.validate(x, y) or not self.content[x][y]: return False

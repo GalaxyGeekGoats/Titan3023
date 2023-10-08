@@ -1,8 +1,10 @@
-from textual.widgets import Header, Footer, Label, Button, DataTable, Select
+from textual.widgets import Header, Footer, Label, Button, DataTable, Select, Input
 from textual.screen import Screen
 from rich.text import Text
 from gameplay.building_reader import building_reader
 from gameplay.variables import StateSaver
+from textual.validation import Number
+
 
 # do not remove
 import gameplay.grid
@@ -40,10 +42,27 @@ class Build_ui(Screen):
         yield Select(to_build, id="select_build")
         yield Button("Build", id="build", variant="default")
         yield Button("Back", id="back", variant="default")
+        yield Input(
+            id="x",
+            placeholder="Enter a digit...",
+            validators=[
+                Number(minimum=0, maximum=5),
+            ]
+        )
+        yield Input(
+            id="y",
+            placeholder="Enter a digit...",
+            validators=[
+                Number(minimum=0, maximum=5),
+            ]
+        )
         yield Label(str(StateSaver.grid), id="grid")
         yield Footer()
 
     def on_mount(self):
+        self.query_one("#grid").styles.text_align = "right"
+        self.query_one("#grid").styles.width = "50%"
+        #self.query_one("#grid").styles.margin = (0,0,300,300)
         table = self.query_one(DataTable)
         table.add_columns(*ROWS[0])
         for row in ROWS[1:]:

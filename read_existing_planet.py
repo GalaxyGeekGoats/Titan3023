@@ -13,3 +13,4 @@ class ExistingPlanetReader:
 
 
 existing_planet_reader = ExistingPlanetReader()
+print(str(existing_planet_reader))
