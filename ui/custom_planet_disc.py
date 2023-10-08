@@ -1,10 +1,8 @@
 from textual.widgets import Header, Footer, Button, Label
 from textual.screen import Screen
-import asyncio
 
 import ui.custom_planet
 from ui.start import Start
-from generate_new_planet import generate
 
 
 class CustomPlanetDisc(Screen):

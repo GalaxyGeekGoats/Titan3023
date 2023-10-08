@@ -1,5 +1,6 @@
 import random
 from planet_class import Planet
+from gameplay.variables import StateSaver
 
 colors = ("red", "blue", "green")
 letters = ("x", "y", "z", "a", "u", "w")
@@ -13,7 +14,7 @@ min_temp = random_number(0, 300)
 max_temp = random_number(200, 800)
 
 
-def generate(name=letters[random_number(0, len(letters) - 1)] + "-" + str(random_number(100, 999))):
+def generate_and_save(name=letters[random_number(0, len(letters) - 1)] + "-" + str(random_number(100, 999))):
     plan = Planet(
         name,
         min_temp,
@@ -25,5 +26,6 @@ def generate(name=letters[random_number(0, len(letters) - 1)] + "-" + str(random
         random_number(0, 1),
         colors[random_number(0, len(colors) - 1)]
     )
-
-    return plan.desc()
+    plan.generate_desc()
+    StateSaver.planet = plan
+    return plan

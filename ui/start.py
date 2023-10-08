@@ -2,10 +2,10 @@ from textual.widgets import Header, Footer, Label, Input, Button, DataTable
 from textual.screen import Screen
 from textual.validation import Number
 from ui.label_change import LabelChange
-from building_reader import building_reader
 from rich.text import Text
 from ui.gameplay import Gameplay
 
+"""
 ROWS = [
     ("NAME", "COST", "INPUT", "OUTPUT",),
     (building_reader.read_building(0).name,
@@ -38,6 +38,7 @@ ROWS = [
      str(building_reader.read_building(5).output_value) + " x " + str(building_reader.read_building(5).building_output))
 
 ]
+"""
 
 
 class Start(Screen):
