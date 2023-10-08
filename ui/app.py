@@ -3,7 +3,7 @@ from ui.settings import SettingsScreen
 from ui.menu import Menu
 from ui.quit_screen import QuitScreen
 
-lang = "polski"
+lang = "english"
 
 
 class Titan3023(App):

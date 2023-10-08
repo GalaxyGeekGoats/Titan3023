@@ -24,7 +24,8 @@ def generate_and_save(name=letters[random_number(0, len(letters) - 1)] + "-" + s
         random_number(0, 1),
         random_number(0, 1),
         random_number(0, 1),
-        colors[random_number(0, len(colors) - 1)]
+        colors[random_number(0, len(colors) - 1)],
+        ""
     )
     plan.generate_desc()
     StateSaver.planet = plan

@@ -1,0 +1,18 @@
+planet_name;min_temp;max_temp;avg_temp;light_intensity;Uranium;Iron;Silicon;Colour;Fun_Fact
+Mercury;100;700;452;14.59;No;Yes;Yes;Brown;Mercury was explored by NASA's Mariner 10 and MESSENGER missions. MESSENGER discovered water ice and organic molecules on the planet's surface.
+Venus;735;735;735;64.16;No;Yes;Yes;Yellow;NASA's Magellan spacecraft mapped Venus' surface using radar, revealing its volcanic nature and dense atmosphere. Venus missions also inspired future Venus exploration plans like VERITAS.
+Earth;184;331;288;1;Yes;Yes;Yes;Blue;Earth is the only planet where you can indeed touch grass.
+Mars;133;293;210;0.43;No;Yes;Yes;Red;NASA's rovers, including Spirit, Opportunity, Curiosity, and Perseverance, have explored Mars' surface, discovering evidence of past water and seeking signs of microbial life.
+Moon;100;390;250;1;No;Yes;Yes;Grey;NASA's Apollo missions, especially Apollo 11, marked humanity's first lunar landings. Recently, NASA's Artemis program aims to return astronauts, including the first woman, to the Moon.
+Io;90;130;110;0.24;No;Yes;Yes;Orange;NASA's Galileo spacecraft studied Jupiter's moons, including Io, capturing images of its active volcanoes. Io's extreme volcanic activity was a significant discovery.
+Europa;50;125;102;0.13;No;Yes;Yes;White;Europa serves as the setting of the survival horror video game „Barotrauma”. You might want to grab it on steam with your squad. 
+Enceladus;32;89;75;0.005;No;Yes;Yes;White;NASA's Cassini spacecraft discovered geysers on Enceladus, indicating a subsurface ocean. This finding influenced plans for future missions to explore the potential habitability of its ocean.
+Titan;70;94;70;0.01;No;Yes;Yes;Orange;NASA's Cassini-Huygens mission explored Saturn's moon Titan, revealing lakes and rivers of liquid methane and ethane. Dragonfly, a future rotorcraft mission, will explore Titan's surface.
+Kepler-452b;252;280;265;1.2;Yes;Yes;Yes;Brown;The Kepler Space Telescope discovered Kepler-452b, a planet in the habitable zone. Its discovery encouraged the search for Earth-like exoplanets, inspiring missions like TESS.
+Proximia Centauri b;220;240;234;0.7;Yes;Yes;Yes;Orange;Proxima b orbits the star closest to us, Proxima Centauri. It is a target for future exoplanet studies and may provide insights into the habitability of planets around red dwarfs.
+Kepler-22b;275;283;279;1.04;No;Yes;Yes;Green;"Kepler-22b was mentioned in Star Trek: Strange New Worlds in the episode ""Spock Amok""."
+Kepler-186f;160;200;188;0.005;Yes;Yes;Yes;Red;Kepler-186f is the first Earth-sized exoplanet in the habitable zone. Its discovery showcased the diversity of exoplanets and expanded our understanding of potentially habitable worlds.
+Coconuts-2 b;425;443;432;8;No;Yes;Yes;Aquilium;CoRoT-2b was discovered by the French-led CoRoT mission, showcasing international collaboration in exoplanet exploration.
+CD Cet b;446;482;464;8;Yes;No;Yes;Sanguine;CD Cet b is a gas giant discovered through radial velocity measurements, a technique widely used in detecting exoplanets. This method has contributed to the discovery of numerous exoplanets.
+Ganymede ;193;283;273;0.04;No;Yes;Yes;Brown;Ganymede is a moon of Jupiter, explored by the Galileo spacecraft. It is the largest moon in the solar system and has its magnetic field, a unique feature among moons.
+Triton;235;214;235;0.03;No;Yes;Yes;Pink;Triton, Neptune's largest moon, was explored by Voyager 2. Its retrograde orbit and geysers of nitrogen gas were fascinating discoveries made during the mission.
