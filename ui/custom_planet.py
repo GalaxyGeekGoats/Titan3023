@@ -20,7 +20,10 @@ class CustomPlanet(Screen):
         btn_id = event.button.id
         if btn_id == "go":
             custom_name = self.query_one("#input").value
-            generate_and_save()
+            if custom_name=="":
+                generate_and_save()
+            else:
+                generate_and_save(custom_name)
             self.app.switch_screen(CustomPlanetDisc())
         elif btn_id == "back":
             self.dismiss()

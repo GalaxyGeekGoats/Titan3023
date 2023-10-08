@@ -1,4 +1,4 @@
-from textual.widgets import Header, Footer, Label, Button, Input, DataTable, Select
+from textual.widgets import Header, Footer, Label, Button, DataTable, Select
 from textual.screen import Screen
 from rich.text import Text
 from gameplay.building_reader import building_reader
@@ -22,13 +22,13 @@ for i in range(6):
 class Build_ui(Screen):
     def compose(self):
         to_build = []
-        for i in range(6):
-            if building_reader.build_building(i).build_cost == "Iron" and int(
-                    building_reader.build_building(i).build_cost_value) <= int(StateSaver.resources["iron"]):
-                to_build.append((str(building_reader.build_building(i).name), i))
-            elif building_reader.build_building(i).build_cost == "Silicon" and int(
-                    building_reader.build_building(i).build_cost_value) <= int(StateSaver.resources["silicon"]):
-                to_build.append((str(building_reader.build_building(i).name), i))
+        for z in range(6):
+            if building_reader.build_building(z).build_cost == "Iron" and int(
+                    building_reader.build_building(z).build_cost_value) <= int(StateSaver.resources["iron"]):
+                to_build.append((str(building_reader.build_building(z).name), z))
+            elif building_reader.build_building(z).build_cost == "Silicon" and int(
+                    building_reader.build_building(z).build_cost_value) <= int(StateSaver.resources["silicon"]):
+                to_build.append((str(building_reader.build_building(z).name), z))
         yield Header()
         yield Label("Day: " + str(StateSaver.resources["day"]) + "   Iron: " + str(
             StateSaver.resources.get("iron")) + "   Uran: " + str(StateSaver.resources["uran"]) + "   Silicon: " + str(
@@ -47,8 +47,6 @@ class Build_ui(Screen):
                 Text(str(cell), style="italic #03AC13", justify="right") for cell in row
             ]
             table.add_row(*styled_row)
-
-
 
     def on_button_pressed(self, event):
         btn_id = event.button.id

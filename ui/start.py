@@ -1,7 +1,6 @@
 from textual.widgets import Header, Footer, Label, Input, Button, DataTable
 from textual.screen import Screen
 from textual.validation import Number
-
 from gameplay.building_reader import building_reader
 from gameplay.variables import StateSaver
 from ui.label_change import LabelChange
@@ -76,7 +75,6 @@ class Start(Screen):
                     StateSaver.resources["silicon"] = silicon
                     StateSaver.resources["uran"] = uranium
                     self.app.switch_screen(Gameplay())
-
 
             except:
                 self.query_one("#return").data = "Give a number!!!"

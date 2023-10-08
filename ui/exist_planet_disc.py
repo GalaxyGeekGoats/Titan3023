@@ -1,7 +1,5 @@
 from textual.screen import Screen
 from textual.widgets import Header, Footer, Button, Label
-from read_existing_planet import existing_planet_reader
-import ui.existing_planet
 from gameplay.variables import StateSaver
 from ui.start import Start
 

@@ -12,5 +12,4 @@ class ExistingPlanetReader:
         return plan
 
 
-
 existing_planet_reader = ExistingPlanetReader()

@@ -1,6 +1,5 @@
 from textual.widgets import Select, Button, Checkbox
 from textual.screen import Screen
-
 import ui.app
 
 LANGUAGES = ["english", "polski", "deutsch", "Español", "日本語(Nihongo)", "Latinus"]

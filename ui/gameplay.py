@@ -3,6 +3,7 @@ from textual.screen import Screen
 from gameplay.variables import StateSaver
 from ui.build_ui import Build_ui
 
+
 class Gameplay(Screen):
     def compose(self):
         yield Header()
@@ -17,7 +18,6 @@ class Gameplay(Screen):
 
     def _on_mount(self):
         self.app.query_one("#head").styles.align_vertical = "top"
-
 
     def on_button_pressed(self, event):
         btn_id = event.button.id
