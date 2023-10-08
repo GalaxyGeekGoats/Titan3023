@@ -32,16 +32,14 @@ def generate_to_build():
             to_build.append((str(building_reader.build_building(z).name), z))
     return to_build
 
-def get_stats():
-    return "Day: " + str(StateSaver.resources["day"]) + "   Iron: " + str(StateSaver.resources.get("iron")) + "   Uran: " + str(StateSaver.resources["uran"]) + "   Silicon: " + str(StateSaver.resources["silicon"]) + "   Electricity: " + str(StateSaver.resources["electricity"])
 
 class Build_ui(Screen):
     def compose(self):
         grid_label = LabelChange(id="grid")
         grid_label.data = str(StateSaver.grid)
         stats = LabelChange(id="head")
-        stats.data = get_stats()
-        stats.styles.height = 1;
+        stats.data = StateSaver.get_stats()
+        stats.styles.height = 1
 
         yield Header()
         yield Button("Back", id="back", variant="default")
@@ -93,4 +91,4 @@ class Build_ui(Screen):
                 pass
         elif btn_id == "back":
             self.dismiss()
-        self.query_one("#head").data = get_stats()
+        self.query_one("#head").data = StateSaver.get_stats()

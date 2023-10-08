@@ -10,3 +10,10 @@ class StateSaver:
     planet = None
 
     grid = None
+
+    @staticmethod
+    def get_stats():
+        return "Day: " + str(StateSaver.resources["day"]) + "   Iron: " + str(
+            StateSaver.resources.get("iron")) + "   Uran: " + str(StateSaver.resources["uran"]) + "   Silicon: " + str(
+            StateSaver.resources["silicon"]) + "   Electricity: " + str(StateSaver.resources["electricity"])
+

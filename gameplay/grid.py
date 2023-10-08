@@ -4,12 +4,13 @@ import random
 
 class Grid:
     SIZE = 5
-    # require planet for load too
+
     def __init__(self):
         self.content = [[None] * Grid.SIZE for _ in range(Grid.SIZE)]
 
+    @staticmethod
     def validate(x, y):
-        return x >= 0 and x < Grid.SIZE and y >= 0 and y < Grid.SIZE
+        return 0 <= x < Grid.SIZE and 0 <= y < Grid.SIZE
 
     def begin_new_day(self):
         for row in self.content:
@@ -63,5 +64,15 @@ class Grid:
             if Grid.validate(newx, newy):
                 if self.content[newx][newy].name == name: return True
         return False
+
+    @staticmethod
+    def load(content):
+        res = Grid()
+        for i, row in enumerate(content.split("\n")):
+            for j, cell in enumerate(row.split("\t")):
+                if cell != "_":
+                    res.content[i][j] = building_reader.building_emotes[cell]
+        return res
+
 
 StateSaver.grid = Grid()

@@ -1,6 +1,6 @@
 from textual.screen import Screen
 from textual.widgets import Button, Label
-
+from gameplay.file_saver import FileSaver
 
 class QuitScreen(Screen):
     def compose(self):
@@ -11,6 +11,7 @@ class QuitScreen(Screen):
     def on_button_pressed(self, event):
         btn_id = event.button.id
         if btn_id == "quit_btn":
+            FileSaver.export_save()
             self.app.exit()
         elif btn_id == "cancel_btn":
             self.app.pop_screen()

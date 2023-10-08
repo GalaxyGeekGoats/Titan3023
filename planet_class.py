@@ -4,18 +4,18 @@ import ui.app
 
 
 class Planet:
-    def __init__(self, name, min_temp, max_temp, avg_temp, light_intensity, uran_bool, iron_bool, silicon_bool, color, fun_fact):
+    def __init__(self, name, min_temp, max_temp, avg_temp, light_intensity, uranTF, ironTF, siliconTF, color, fun_fact, desc=""):
         self.name = name
         self.min_temp = min_temp
         self.max_temp = max_temp
         self.avg_temp = avg_temp
         self.light_intensity = light_intensity
-        self.uranTF = uran_bool
-        self.ironTF = iron_bool
-        self.siliconTF = silicon_bool
+        self.uranTF = uranTF
+        self.ironTF = ironTF
+        self.siliconTF = siliconTF
         self.color = color
         self.fun_fact = fun_fact
-        self.desc = ""
+        self.desc = desc
 
     def __str__(self):
         return (

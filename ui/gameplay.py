@@ -2,14 +2,16 @@ from textual.widgets import Header, Footer, Label, Button
 from textual.screen import Screen
 from gameplay.variables import StateSaver
 from ui.build_ui import Build_ui
-
+from ui.label_change import LabelChange
 
 class Gameplay(Screen):
     def compose(self):
+        stats = LabelChange(id="head")
+        stats.styles.height = 1
+        stats.data = StateSaver.get_stats()
+
         yield Header()
-        yield Label("Day: " + str(StateSaver.resources["day"]) + "   Iron: " + str(
-            StateSaver.resources["iron"]) + "   Uran: " + str(StateSaver.resources["uran"]) + "   Silicon: " + str(
-            StateSaver.resources["silicon"]) + "   Electricity: " + str(StateSaver.resources["electricity"]), id="head")
+        yield stats
         yield Button("Build", id="build")
         yield Button("Remove", id="remove")
         yield Button("Shop", id="shop")
@@ -17,7 +19,8 @@ class Gameplay(Screen):
         yield Footer()
 
     def _on_mount(self):
-        self.app.query_one("#head").styles.align_vertical = "top"
+        self.query_one("#head").styles.align_vertical = "top"
+        self.query_one("#head").data = StateSaver.get_stats()
 
     def on_button_pressed(self, event):
         btn_id = event.button.id

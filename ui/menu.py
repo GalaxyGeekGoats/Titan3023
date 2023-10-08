@@ -3,6 +3,7 @@ from ui.credits import Credits
 from ui.new_game import NewGame
 from textual.screen import Screen
 from ui.database import DatabaseScreen
+from ui.load_screen import LoadScreen
 
 
 class Menu(Screen):
@@ -22,3 +23,5 @@ class Menu(Screen):
             self.app.push_screen(NewGame())
         elif btn_id == "database":
             self.app.push_screen(DatabaseScreen())
+        elif btn_id == "load":
+            self.app.push_screen(LoadScreen())
