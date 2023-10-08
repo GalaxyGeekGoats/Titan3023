@@ -39,34 +39,36 @@ class Build_ui(Screen):
     def compose(self):
         grid_label = LabelChange(id="grid")
         grid_label.data = str(StateSaver.grid)
+        stats = LabelChange(id="head")
+        stats.data = get_stats()
+        stats.styles.height = 1;
 
         yield Header()
-        yield Label(get_stats(), id="head")
+        yield Button("Back", id="back", variant="default")
+        yield stats
         yield DataTable()
         yield Select(generate_to_build(), id="select_build")
-        yield Button("Build", id="build", variant="default")
-        yield Button("Back", id="back", variant="default")
         yield Input(
             id="x",
-            placeholder="Enter a digit...",
+            placeholder="Enter X coordinate",
             validators=[
                 Number(minimum=0, maximum=5),
             ]
         )
         yield Input(
             id="y",
-            placeholder="Enter a digit...",
+            placeholder="Enter Y coordinate (decreases upwards)",
             validators=[
                 Number(minimum=0, maximum=5),
             ]
         )
+        yield Button("Build", id="build", variant="default")
         yield grid_label
         yield Footer()
 
     def on_mount(self):
         self.query_one("#grid").styles.text_align = "right"
         self.query_one("#grid").styles.width = "50%"
-        #self.query_one("#grid").styles.margin = (0,0,300,300)
         table = self.query_one(DataTable)
         table.add_columns(*ROWS[0])
         for row in ROWS[1:]:
@@ -91,4 +93,4 @@ class Build_ui(Screen):
                 pass
         elif btn_id == "back":
             self.dismiss()
-        self.query_one("#head").value = get_stats()
+        self.query_one("#head").data = get_stats()

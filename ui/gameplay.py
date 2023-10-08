@@ -22,7 +22,7 @@ class Gameplay(Screen):
     def on_button_pressed(self, event):
         btn_id = event.button.id
         if btn_id == "build":
-            self.app.switch_screen(Build_ui())
+            self.app.push_screen(Build_ui())
         elif btn_id == "remove":
             pass
         elif btn_id == "shop":
