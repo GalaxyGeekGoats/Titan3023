@@ -3,16 +3,14 @@ from textual.screen import Screen
 
 import ui.custom_planet
 from ui.start import Start
+from gameplay.variables import StateSaver
 
 
 class CustomPlanetDisc(Screen):
     def compose(self):
         name = ui.custom_planet.custom_name
         yield Header()
-        #if name == "":
-        #    yield Label(generate())
-        #else:
-        #    yield Label(generate(name))
+        yield Label(StateSaver.planet.desc)
         yield Button("Start", id="start", variant="default")
         yield Footer()
 

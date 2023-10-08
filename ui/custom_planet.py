@@ -1,6 +1,7 @@
 from textual.widgets import Header, Footer, Button, Label, Input
 from textual.screen import Screen
 from ui.custom_planet_disc import CustomPlanetDisc
+from generate_new_planet import generate_and_save
 
 custom_name = ""
 
@@ -19,6 +20,7 @@ class CustomPlanet(Screen):
         btn_id = event.button.id
         if btn_id == "go":
             custom_name = self.query_one("#input").value
+            generate_and_save()
             self.app.switch_screen(CustomPlanetDisc())
         elif btn_id == "back":
             self.dismiss()

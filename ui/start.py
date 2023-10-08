@@ -3,7 +3,7 @@ from textual.screen import Screen
 from textual.validation import Number
 
 from gameplay.building_reader import building_reader
-from gameplay.variables import resources
+from gameplay.variables import StateSaver
 from ui.label_change import LabelChange
 from rich.text import Text
 from ui.gameplay import Gameplay
@@ -72,9 +72,9 @@ class Start(Screen):
                     self.query_one(
                         "#return").data = "Rocket won't launch. Weight of materials is more than 21 or less than 0"
                 else:
-                    resources.update({"iron": iron})
-                    resources["silicon"] = silicon
-                    resources["uran"] = uranium
+                    StateSaver.resources.update({"iron": iron})
+                    StateSaver.resources["silicon"] = silicon
+                    StateSaver.resources["uran"] = uranium
                     self.app.switch_screen(Gameplay())
 
 

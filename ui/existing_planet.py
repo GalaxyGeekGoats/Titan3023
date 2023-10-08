@@ -2,6 +2,7 @@ from textual.widgets import Header, Footer, Select, Button, Label, LoadingIndica
 from textual.screen import Screen
 from ui.exist_planet_disc import ExistPlanetDisc
 from read_existing_planet import existing_planet_reader
+from gameplay.variables import StateSaver
 from generate_new_planet import generate_and_save
 chosenPlanet = -1
 
@@ -21,10 +22,12 @@ class ExistingPlanet(Screen):
         btn_id = event.button.id
         if btn_id == "choose":
             chosenPlanet = self.query_one("#select_planet").value
+            plan = existing_planet_reader.read_planet(chosenPlanet)
+            plan.generate_desc()
+            StateSaver.planet = plan
+
             #self.query_one("#loading").display=True
 
-
-            generate_and_save()
             self.app.push_screen(ExistPlanetDisc())
         elif btn_id == "back":
             self.dismiss()

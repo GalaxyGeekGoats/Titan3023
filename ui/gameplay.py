@@ -1,14 +1,14 @@
 from textual.widgets import Header, Footer, Label, Button
 from textual.screen import Screen
-from gameplay.variables import resources
+from gameplay.variables import StateSaver
 from ui.build_ui import Build_ui
 
 class Gameplay(Screen):
     def compose(self):
         yield Header()
-        yield Label("Day: " + str(resources["day"]) + "   Iron: " + str(
-            resources["iron"]) + "   Uran: " + str(resources["uran"]) + "   Silicon: " + str(
-            resources["silicon"]) + "   Electricity: " + str(resources["electricity"]), id="head")
+        yield Label("Day: " + str(StateSaver.resources["day"]) + "   Iron: " + str(
+            StateSaver.resources["iron"]) + "   Uran: " + str(StateSaver.resources["uran"]) + "   Silicon: " + str(
+            StateSaver.resources["silicon"]) + "   Electricity: " + str(StateSaver.resources["electricity"]), id="head")
         yield Button("Build", id="build")
         yield Button("Remove", id="remove")
         yield Button("Shop", id="shop")
