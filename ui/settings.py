@@ -10,7 +10,6 @@ LANGUAGES = list(map(lambda x: (x, x), LANGUAGES))
 class SettingsScreen(Screen):
     def compose(self):
         yield Select(LANGUAGES, id="select_lang")
-        yield Button("Change language", id="lang_change", variant="default")
         yield Checkbox("Is darkmode enabled?", True, id="darkmode")
         yield Button("Save", id="save_btn", variant="success")
 

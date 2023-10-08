@@ -9,7 +9,7 @@ class Grid:
         self.content = [[None] * Grid.SIZE] * Grid.SIZE
 
     def validate(x, y):
-        return x >= 0 and x < Grid.SIZE and y >= 0 and y < GRID.SIZE
+        return x >= 0 and x < Grid.SIZE and y >= 0 and y < Grid.SIZE
 
     def begin_new_day(self):
         for row in self.content:
@@ -58,7 +58,7 @@ class Grid:
         coords = [[1,0], [0,1], [-1,0], [0,-1]]
         for i,j in coords:
             newx = x+i
-            nexy = y+j
+            newy = y+j
             if Grid.validate(newx, newy):
                 if self.content[newx][newy].name == name: return True
         return False

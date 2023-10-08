@@ -1,5 +1,5 @@
 from textual.screen import Screen
-from textual.widgets import Button, Label, Header, Footer
+from textual.widgets import Button, Label
 
 
 class QuitScreen(Screen):

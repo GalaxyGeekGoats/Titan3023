@@ -1,0 +1,20 @@
+Event;Solution_1;Solution_1_consequences;Solution_2;Solution_2_consequences ;Description
+Severe dust storm ;Reinforce walls;[-IRON];Evacuate exposed hubs;[ONE HUB DESTROYED];Satellite in orbit has detected a severe dust storm approaching our position. We must take immediate safety measures!.
+Equipment failure;Repair the device;[-SILICON];Double strain on the other piece;[INCREASED ENERGY CONSUMPTION];One of the drills or whatnot broke down. We must take action to maintain current productivity level. 
+Rogue AI;Dismantle the server;[+SILICON];Send AI to the mines as a punishment;[+IRON];I think ChatGPT took control over the microwave and keeps burning my food. Please do something about it.
+Micro-Meteoroid impact;Repair the damage;[-IRON];Seal of the damaged area;[ONE HUB DESTROYED];A small meteoroid has pierced the roof of one of our hubs. Air is leaking out at an alarming rate.
+Unexpected temperature drop;Crank up the heaters;[-ENERGY];I like it a bit chilly;[+ENERGY];Satellite in orbit has detected a cold front approaching our position. If we do not increase the temperature our hubs will become largely uncomfortable. 
+Heat Wave;Build more Radiators;[-IRON];"„Heat, heat waves, I'm swimming in a mirror 
+Road shimmer, wiggling the vision 
+Heat, heat waves, I'm swimmin' in a-”.";[+ENERGY];"„Sometimes all I think about is you 
+Late nights in the middle of June 
+Heat waves been faking me out 
+Can't make you happier now”."
+Sabotage Attempt;Hold a vote and throw them out of the airlock!.;[0];Heh that reminds me of a funny space man game from 2020;[ONE HUB DESTROYED];We think one of the crew mates might be a dangerous imposter trying to sabotage our infrastructure. What should we do?.
+Survivors crashed nearby;Call forth the rovers! We will take them all in;[-ENERGY];We don’t have space right now;[-IRON];A spaceship on our orbit had to evacuate and an escape pod has crashed in our vicinity. Should we organize a rescue party?.
+A Rat;Let him be. He is one of us now;[-ENERGY];EAT HIM!!!.;[+ENERGY];We have no idea how but a rat has been spotted in our colony. Do we just let him be or what?.
+The beacons are lit!;And Rohan will answer!.;[+URANIUM];Dude what?.;[ONE HUB DESTROYED];Gondor calls for aid!.
+Solar flare;Let’s build some faraday cages and hope for the best;[-SILICON];Revolt against the modern world;[GAME OVER];Our satellite has detected a dangerous solar flare which might destroy our electronic equipment. We must take immediate action!.
+Radiation;Evacuate the hub;[ONE HUB DESTROYED];Interesting, let’s see what lies underneath it!.;[+URANIUM];One of the hubs seems to be exposed to increased radiation from the ground threatening the safety of our colonists.
+Deposit runs out;Go deeper. Rock and stone!.;[-IRON];Pack up and hit the road;[-POWER];Our mining operations have reached a dead end. We can either dig deeper or relocate the mining post. 
+Subsurface cavern discovered;Just get the resources and seal it off;[+SILICON];Let’s make it into an underground shelter;[ONE HUB CREATED];During our mining operations we have discovered a cavern full of resources. Do we just grab the minerals and go or do something fun with the space?.

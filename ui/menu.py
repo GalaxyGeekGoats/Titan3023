@@ -2,7 +2,6 @@ from textual.widgets import Button, Header, Footer
 from ui.credits import Credits
 from ui.new_game import NewGame
 from textual.screen import Screen
-from textual.containers import Container, Vertical
 from ui.database import DatabaseScreen
 
 

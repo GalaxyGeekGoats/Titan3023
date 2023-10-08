@@ -1,44 +1,28 @@
 from textual.widgets import Header, Footer, Label, Input, Button, DataTable
 from textual.screen import Screen
 from textual.validation import Number
+
+from gameplay.building_reader import building_reader
+from gameplay.variables import resources
 from ui.label_change import LabelChange
 from rich.text import Text
 from ui.gameplay import Gameplay
 
-"""
 ROWS = [
-    ("NAME", "COST", "INPUT", "OUTPUT",),
-    (building_reader.read_building(0).name,
-     str(building_reader.read_building(0).build_cost_value) + " x " + building_reader.read_building(0).build_cost,
-     str(building_reader.read_building(0).input_value) + " x " + building_reader.read_building(0).building_input,
-     str(building_reader.read_building(0).output_value) + " x " + building_reader.read_building(0).building_output),
-    (building_reader.read_building(1).name,
-     str(building_reader.read_building(1).build_cost_value) + " x " + str(building_reader.read_building(1).build_cost),
-     str(building_reader.read_building(1).input_value) + " x " + str(building_reader.read_building(1).building_input),
-     str(building_reader.read_building(1).output_value) + " x " + str(
-         building_reader.read_building(1).building_output)),
-    (building_reader.read_building(2).name,
-     str(building_reader.read_building(2).build_cost_value) + " x " + str(building_reader.read_building(2).build_cost),
-     str(building_reader.read_building(2).input_value) + " x " + str(building_reader.read_building(2).building_input),
-     str(building_reader.read_building(2).output_value) + " x " + str(
-         building_reader.read_building(2).building_output)),
-    (building_reader.read_building(3).name,
-     str(building_reader.read_building(3).build_cost_value) + " x " + str(building_reader.read_building(3).build_cost),
-     str(building_reader.read_building(3).input_value) + " x " + str(building_reader.read_building(3).building_input),
-     str(building_reader.read_building(3).output_value) + " x " + str(
-         building_reader.read_building(3).building_output)),
-    (building_reader.read_building(4).name,
-     str(building_reader.read_building(4).build_cost_value) + " x " + str(building_reader.read_building(4).build_cost),
-     str(building_reader.read_building(4).input_value) + " x " + str(building_reader.read_building(4).building_input),
-     str(building_reader.read_building(4).output_value) + " x " + str(
-         building_reader.read_building(4).building_output)),
-    (building_reader.read_building(5).name,
-     str(building_reader.read_building(5).build_cost_value) + " x " + str(building_reader.read_building(5).build_cost),
-     str(building_reader.read_building(5).input_value) + " x " + str(building_reader.read_building(5).building_input),
-     str(building_reader.read_building(5).output_value) + " x " + str(building_reader.read_building(5).building_output))
+    ("NAME", "COST", "INPUT", "OUTPUT",)
 
 ]
-"""
+i = 0
+while i < 6:
+    ROWS.append(
+        (str(building_reader.build_building(i).name),
+         str(building_reader.build_building(i).build_cost_value) + " x " + str(
+             building_reader.build_building(i).build_cost),
+         str(building_reader.build_building(i).input_value) + " x " + str(
+             building_reader.build_building(i).building_input),
+         str(building_reader.build_building(i).output_value) + " x " + str(
+             building_reader.build_building(i).building_output)))
+    i += 1
 
 
 class Start(Screen):
@@ -55,7 +39,7 @@ class Start(Screen):
             placeholder="Enter a number...",
             validators=[
                 Number(minimum=0, maximum=21),
-            ],
+            ]
         )
         yield Label("Iron:", id="iron_text")
         yield Input(
@@ -63,7 +47,7 @@ class Start(Screen):
             placeholder="Enter a number...",
             validators=[
                 Number(minimum=0, maximum=21),
-            ],
+            ]
         )
         yield Label("Uranium:", id="uranium_text")
         yield Input(
@@ -71,30 +55,31 @@ class Start(Screen):
             placeholder="Enter a number...",
             validators=[
                 Number(minimum=0, maximum=21),
-            ],
+            ]
         )
         yield Button("Submit", id="submit_btn")
         yield LabelChange(id="return")
-        yield Button("Next", id="next")
         yield Footer()
 
     def on_button_pressed(self, event):
         btn_id = event.button.id
         if btn_id == "submit_btn":
             try:
-                silicon = int(self.query_one("#silicon_amount").value)
-                iron = int(self.query_one("#iron_amount").value)
-                uranium = int(self.query_one("#uranium_amount").value)
+                silicon = int(str(self.query_one("#silicon_amount").value))
+                iron = int(str(self.query_one("#iron_amount").value))
+                uranium = int(str(self.query_one("#uranium_amount").value))
                 if silicon + iron + uranium > 21 or silicon + iron + uranium < 0:
                     self.query_one(
                         "#return").data = "Rocket won't launch. Weight of materials is more than 21 or less than 0"
                 else:
-                    self.query_one("#return").data = "Good luck"
+                    resources.update({"iron": iron})
+                    resources["silicon"] = silicon
+                    resources["uran"] = uranium
+                    self.app.switch_screen(Gameplay())
+
 
             except:
                 self.query_one("#return").data = "Give a number!!!"
-        elif btn_id == "next":
-            self.app.switch_screen(Gameplay())
 
     def on_mount(self) -> None:
         table = self.query_one(DataTable)
