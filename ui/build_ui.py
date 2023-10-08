@@ -4,6 +4,9 @@ from rich.text import Text
 from gameplay.building_reader import building_reader
 from gameplay.variables import StateSaver
 
+# do not remove
+import gameplay.grid
+
 ROWS = [
     ("NAME", "COST", "INPUT", "OUTPUT",)
 
@@ -37,6 +40,7 @@ class Build_ui(Screen):
         yield Select(to_build, id="select_build")
         yield Button("Build", id="build", variant="default")
         yield Button("Back", id="back", variant="default")
+        yield Label(str(StateSaver.grid), id="grid")
         yield Footer()
 
     def on_mount(self):

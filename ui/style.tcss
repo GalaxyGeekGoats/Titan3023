@@ -15,6 +15,7 @@ PlanetWidget {
 }
 
 .horizony{
-    width: 0.4fr;
-    border: solid green;
+   	width: 0.4fr;
+	border: solid green;
 }
+

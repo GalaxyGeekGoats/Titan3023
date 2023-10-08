@@ -45,7 +45,7 @@ class Grid:
 
     def build(self, type, x, y) -> bool:
         if not Grid.validate(x, y): return False
-        build = building_reader.build_building(type)
+        build = building_reader.build_building(building_reader.building_names[type])
         if type == "Hub":
             temp_unit = "Radiator" if StateSaver.planet.avg_temp > 273 else "Heater"
             good_placement = self._check_proximity(temp_unit, x, y)
@@ -62,3 +62,5 @@ class Grid:
             if Grid.validate(newx, newy):
                 if self.content[newx][newy].name == name: return True
         return False
+
+StateSaver.grid = Grid()

@@ -9,3 +9,4 @@ class StateSaver:
 
     planet = None
 
+    grid = None
