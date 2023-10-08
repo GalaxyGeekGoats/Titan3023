@@ -6,7 +6,7 @@ class Grid:
     SIZE = 5
     # require planet for load too
     def __init__(self):
-        self.content = [[None] * Grid.SIZE] * Grid.SIZE
+        self.content = [[None] * Grid.SIZE for _ in range(Grid.SIZE)]
 
     def validate(x, y):
         return x >= 0 and x < Grid.SIZE and y >= 0 and y < Grid.SIZE
@@ -34,7 +34,7 @@ class Grid:
                         StateSaver.resources[cell.bulding_output.lower()] += cell.output_value
     
     def __str__(self):
-        return "\n".join([" ".join(list(map(lambda cell: "_" if not cell else cell.emote, row))) for row in self.content])
+       return "\n".join([" ".join(["_" if not cell else cell.emote for cell in row]) for row in self.content]) 
 
     def remove(self, x, y) -> bool:
         if not Grid.validate(x, y) or not self.content[x][y]: return False
@@ -44,14 +44,15 @@ class Grid:
         return True
 
     def build(self, type, x, y) -> bool:
-        if not Grid.validate(x, y): return False
-        build = building_reader.build_building(building_reader.building_names[type])
+        if not Grid.validate(x, y) or self.content[x][y]: return False
+        build = building_reader.build_building(type)
         if type == "Hub":
             temp_unit = "Radiator" if StateSaver.planet.avg_temp > 273 else "Heater"
             good_placement = self._check_proximity(temp_unit, x, y)
             if not good_placement:
                 return False
         StateSaver.resources[build.build_cost.lower()] -= build.build_cost_value
+        self.content[x][y] = build
         return True
 
     def _check_proximity(self, name, x, y):
